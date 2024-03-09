@@ -71,3 +71,10 @@ void DeleteElement(ArrayList* a, int index){
     a->size--;
 }
 
+void ReEvalArrayList(ArrayList* a){
+    if (a->size-a->capacity > 5){
+        a->elements = realloc(a->elements, (a->size+5)*sizeof(int)); 
+        a->capacity = a->size+5;
+    }
+}
+
