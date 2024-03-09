@@ -7,15 +7,15 @@ typedef struct {
     int* elements;
 }ArrayList;
 
-ArrayList* CreateArrayList(int count, ...);
+ArrayList* AL_CreateArrayList(int count, ...);
 
-void PrintArrayList(ArrayList* a);
+void AL_PrintArrayList(ArrayList* a);
 
-void AppendArrayList(ArrayList* a, int v);
+void AL_AppendArrayList(ArrayList* a, int v);
 
-void ExtendArrayList(ArrayList* a, int count, ...);
+void AL_ExtendArrayList(ArrayList* a, int count, ...);
 
-void DeleteElement(ArrayList* a, int index);
+void AL_DeleteElement(ArrayList* a, int index);
 
-void ReEvalArrayList(ArrayList* a);
+void AL_ReEvalArrayList(ArrayList* a);
 

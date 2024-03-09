@@ -8,7 +8,7 @@ typedef struct {
     int* elements;
 }ArrayList;
 
-ArrayList* CreateArrayList(int count, ...){
+ArrayList* AL_CreateArrayList(int count, ...){
     int capacity = count;
     if (count < 5){
         capacity = 5;
@@ -27,7 +27,7 @@ ArrayList* CreateArrayList(int count, ...){
     return a;
 }
 
-void PrintArrayList(ArrayList* a){
+void AL_PrintArrayList(ArrayList* a){
     printf("[ ");
     for (int i = 0; i < a->size; i++){
         printf("%d ", a->elements[i]);
@@ -35,7 +35,7 @@ void PrintArrayList(ArrayList* a){
     printf("]\n");
 }
 
-void AppendArrayList(ArrayList* a, int v){
+void AL_AppendArrayList(ArrayList* a, int v){
     if (a->size+1 > a->capacity){
         a->elements = realloc(a->elements, (a->capacity+1)*sizeof(int));
         a->capacity++;
@@ -44,7 +44,7 @@ void AppendArrayList(ArrayList* a, int v){
     a->elements[a->capacity-1] = v;
 }
 
-void ExtendArrayList(ArrayList* a, int count, ...){
+void AL_ExtendArrayList(ArrayList* a, int count, ...){
     if (a->size+count > a->capacity){
         int factor = a->size+count+3;
         a->elements = realloc(a->elements, (factor)*sizeof(int));
@@ -60,7 +60,7 @@ void ExtendArrayList(ArrayList* a, int count, ...){
     va_end(args);
 }
 
-void DeleteElement(ArrayList* a, int index){
+void AL_DeleteElement(ArrayList* a, int index){
     if (a->size-1 < index){
         printf("[Error]: in DeleteElementArrayList index out of bounds\n");
         return;
@@ -71,7 +71,7 @@ void DeleteElement(ArrayList* a, int index){
     a->size--;
 }
 
-void ReEvalArrayList(ArrayList* a){
+void AL_ReEvalArrayList(ArrayList* a){
     if (a->size-a->capacity > 5){
         a->elements = realloc(a->elements, (a->size+5)*sizeof(int)); 
         a->capacity = a->size+5;
