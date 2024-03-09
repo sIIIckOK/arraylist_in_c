@@ -15,3 +15,4 @@ void AppendArrayList(ArrayList* a, int v);
 
 void ExtendArrayList(ArrayList* a, int count, ...);
 
+void DeleteElement(ArrayList* a, int index);

@@ -60,3 +60,14 @@ void ExtendArrayList(ArrayList* a, int count, ...){
     va_end(args);
 }
 
+void DeleteElement(ArrayList* a, int index){
+    if (a->size-1 < index){
+        printf("[Error]: in DeleteElementArrayList index out of bounds\n");
+        return;
+    }
+    for (int i = index; i < a->size-1; i++){
+        a->elements[i] = a->elements[i+1];
+    }
+    a->size--;
+}
+
